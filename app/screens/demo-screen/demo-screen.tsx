@@ -1,6 +1,7 @@
 import { StackScreenProps } from '@react-navigation/stack';
 import React, { FC } from 'react';
 import {
+  Button,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -18,6 +19,7 @@ import {
 
 import { HomeScreenParamList } from '../../navigation/home-navigator';
 import * as styles from './demo-screen.styles';
+import { useStore } from './use-store';
 
 const Section = ({ children, title }) => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -47,6 +49,8 @@ const Section = ({ children, title }) => {
 
 export const DemoScreen: FC<StackScreenProps<HomeScreenParamList, 'Demo'>> =
   function CompletedScreen() {
+    const { onGetUser } = useStore();
+
     const isDarkMode = useColorScheme() === 'dark';
 
     const backgroundStyle = {
@@ -60,6 +64,9 @@ export const DemoScreen: FC<StackScreenProps<HomeScreenParamList, 'Demo'>> =
           contentInsetAdjustmentBehavior="automatic"
           style={backgroundStyle}>
           <Header />
+
+          <Button title="TEST GET USER" onPress={() => onGetUser()}></Button>
+
           <View
             style={{
               backgroundColor: isDarkMode ? Colors.black : Colors.white,

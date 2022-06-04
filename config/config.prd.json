@@ -1,3 +1,4 @@
 {
-  "apiUrl": "https://jsonplaceholder.typicode.com/"
+  "apiUrl": "https://jsonplaceholder.typicode.com/",
+  "debugLog": false,
 }
