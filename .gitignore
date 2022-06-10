@@ -1,3 +1,6 @@
 node_modules/
 template/node_modules/
 template/ios/Pods
+
+# Vscode
+.history
