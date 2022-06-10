@@ -1,7 +1,7 @@
 import { useRequest } from 'ahooks';
 import { useCallback } from 'react';
 
-import { getUserApi } from '../../services/api/api';
+import { getUserApi } from '@/services/api/api';
 
 export const useStore = () => {
   // 获取用户信息demo
@@ -11,7 +11,7 @@ export const useStore = () => {
       console.log(result);
     },
     onError: error => {
-      console.log('error');
+      console.log('error:', error);
     },
   });
 

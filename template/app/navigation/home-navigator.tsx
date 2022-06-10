@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 
-import { DemoScreen } from '../screens/demo-screen/demo-screen';
+import { DemoScreen } from '@/screens/demo-screen/demo-screen';
 
 export type HomeScreenParamList = {
   Demo: undefined;

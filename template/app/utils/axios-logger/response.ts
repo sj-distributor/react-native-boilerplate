@@ -1,5 +1,6 @@
-import { AxiosResponse } from "axios";
-import LogBuilder from "./log-builder";
+import { AxiosResponse } from 'axios';
+
+import LogBuilder from './log-builder';
 
 const responseLogger = (response: AxiosResponse) => {
   const {
@@ -13,7 +14,7 @@ const responseLogger = (response: AxiosResponse) => {
 
   const logBuilder = new LogBuilder();
   const log = logBuilder
-    .makeLogTypeWithPrefix("API Response")
+    .makeLogTypeWithPrefix('API Response')
     .makeDateFormat(new Date())
     .makeMethod(method)
     .makeUrl(url)
