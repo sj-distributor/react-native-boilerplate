@@ -17,11 +17,17 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import { HomeScreenParamList } from '../../navigation/home-navigator';
+import { HomeScreenParamList } from '@/navigation/home-navigator';
+
 import * as styles from './demo-screen.styles';
 import { useStore } from './use-store';
 
-const Section = ({ children, title }) => {
+interface ISectionProps {
+  title: string;
+  children: React.ReactNode;
+}
+
+const Section = ({ children, title }: ISectionProps) => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.SECTION_CONTAINER}>

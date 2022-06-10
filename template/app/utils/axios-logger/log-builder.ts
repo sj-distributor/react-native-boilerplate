@@ -3,7 +3,7 @@ import moment from 'moment';
 
 class LogBuilder {
   private printQueue: Array<string>;
-  private filteredHeaderList: Array<String>;
+  private filteredHeaderList: Array<string>;
 
   constructor() {
     this.printQueue = [];
@@ -40,7 +40,7 @@ class LogBuilder {
 
   makeHeader(headers?: { [key: string]: { value: string } }) {
     const headerMap: { [key: string]: { value: string } } = {};
-    for (let key in headers) {
+    for (const key in headers) {
       if (!this.filteredHeaderList.includes(key)) {
         headerMap[key] = headers[key];
       }

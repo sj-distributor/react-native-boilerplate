@@ -1,8 +1,9 @@
+import { Env } from '@config/env';
 import axios, { AxiosInstance } from 'axios';
 import { LogBox } from 'react-native';
 
-import { Env } from '../../../config/env';
-import { requestLogger, responseLogger } from '../../utils/axios-logger';
+import { requestLogger, responseLogger } from '@/utils/axios-logger';
+
 import * as types from './api.types';
 
 // 0.63之后 关闭全部黄色警告

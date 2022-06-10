@@ -1,4 +1,5 @@
 import { AxiosRequestConfig } from 'axios';
+
 import LogBuilder from './log-builder';
 
 const requestLogger = (request: AxiosRequestConfig) => {
