@@ -23,6 +23,7 @@ module.exports = {
   },
   plugins: ['react', 'react-native', 'simple-import-sort', 'unicorn', 'import'],
   rules: {
+    'react-native/no-inline-styles': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
     'import/no-unresolved': 'off',
     'import/extensions': 'off',

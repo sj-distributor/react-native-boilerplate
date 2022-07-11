@@ -19,39 +19,9 @@ import {
 
 import { HomeScreenParamList } from '@/navigation/home-navigator';
 
+import { Section } from './components/section/section';
 import * as styles from './demo-screen.styles';
 import { useStore } from './use-store';
-
-interface ISectionProps {
-  title: string;
-  children: React.ReactNode;
-}
-
-const Section = ({ children, title }: ISectionProps) => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.SECTION_CONTAINER}>
-      <Text
-        style={[
-          styles.SECTION_TITLE,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.SECTION_DESCRIPTION,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
 
 export const DemoScreen: FC<StackScreenProps<HomeScreenParamList, 'Demo'>> =
   function CompletedScreen() {
@@ -67,8 +37,8 @@ export const DemoScreen: FC<StackScreenProps<HomeScreenParamList, 'Demo'>> =
       <SafeAreaView style={backgroundStyle}>
         <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
         <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={backgroundStyle}>
+          style={backgroundStyle}
+          contentInsetAdjustmentBehavior="automatic">
           <Header />
 
           <Button title="TEST GET USER" onPress={() => onGetUser()}></Button>
@@ -77,20 +47,20 @@ export const DemoScreen: FC<StackScreenProps<HomeScreenParamList, 'Demo'>> =
             style={{
               backgroundColor: isDarkMode ? Colors.black : Colors.white,
             }}>
-            <Section title="Step One">
+            <Section title="Step One" isDarkMode={isDarkMode}>
               <Text>Edit</Text>
               <Text style={styles.HIGH_LIGHT}>App.js</Text>
               <Text>
                 to change this screen and then come back to see your edits.
               </Text>
             </Section>
-            <Section title="See Your Changes">
+            <Section title="See Your Changes" isDarkMode={isDarkMode}>
               <ReloadInstructions />
             </Section>
-            <Section title="Debug">
+            <Section title="Debug" isDarkMode={isDarkMode}>
               <DebugInstructions />
             </Section>
-            <Section title="Learn More">
+            <Section title="Learn More" isDarkMode={isDarkMode}>
               <Text>Read the docs to discover what to do next:</Text>
             </Section>
             <LearnMoreLinks />
