@@ -11,7 +11,7 @@
     "strict": true,
     "target": "esnext",
     "resolveJsonModule": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
       "@/*": ["app/*"],
       "@config/*": ["config/*"]
